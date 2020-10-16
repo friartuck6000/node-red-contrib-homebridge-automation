@@ -427,7 +427,7 @@ module.exports = function(RED) {
 
     node.on('input', function(msg) {
       const payload = {};
-      console.log(node)
+      console.log(node);
       Object.keys(msg.payload).sort().forEach(function(key) {
         payload[key] = msg.payload[key];
       });
