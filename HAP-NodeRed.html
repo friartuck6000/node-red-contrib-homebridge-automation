@@ -553,7 +553,7 @@
       device: {
         value: ""
       },
-      {
+      topic: {
         value: ""
       }
       conf: {
@@ -577,6 +577,7 @@
       this.Manufacturer = $('#node-input-device option:selected').attr('manufacturer').toString();
       this.Service = $('#node-input-device option:selected').attr('service').toString();
       $('#node-input-name').val(this.name);
+      this.topic = $('#node-input-topic').val();
     },
     oneditprepare: function() {
       var node = this;
@@ -642,6 +643,10 @@
           }, 3000);
         });
       });
+      
+      if (node.topic) {
+        $('#node-input-topic').val(node.topic);
+      }
     }
   });
 </script>
